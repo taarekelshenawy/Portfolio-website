@@ -21,7 +21,7 @@ export default function About() {
              md:flex-col lg:flex-row sm:flex-col
               max-sm:flex-col'
               >
-                    <p data-aos="fade-right"
+                    <p data-aos="fade-up"
                     data-aos-duration="1000" 
                     data-aos-delay="200"     
                     data-aos-easing="ease-in-out" 
@@ -36,7 +36,7 @@ export default function About() {
                             the design elements you see were created by 
                             a front-end developer.
                     </p>
-                    <div  data-aos="fade-left"
+                    <div  data-aos="fade-up"
                                   data-aos-duration="1000" 
                                   data-aos-delay="200"     
                                   data-aos-easing="ease-in-out" 
