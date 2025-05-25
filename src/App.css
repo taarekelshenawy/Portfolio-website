@@ -1,0 +1,156 @@
+body{
+    background-color: rgba(0, 0, 0, 0.904);
+}
+:root{
+    --main-color:black;
+    --text-color:#fff;
+}
+/* Navbar css */ 
+nav ul{
+    width: 600px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-weight:bold;
+   font-size: 20px;
+}
+nav ul li p{
+    width: 0px;
+    height: 3px;
+    margin-top: 3px;
+    background-color: red;
+}
+nav ul li:hover p{
+     width: 100%;
+    transition: .5s linear;
+
+}
+.menu-bar{
+ display: none;
+width: 40px;
+ cursor: pointer;
+}
+/* home css */
+.typing{
+   font-size: 32px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 5s steps(23) infinite, blink 0.7s step-end infinite alternate;
+  border-right: 2px solid #000;
+}
+@keyframes typing {
+  0% { width: 0 }
+  50% { width: 23ch }
+  100% { width: 0 }/* عدد الحروف تقريبا */
+}
+
+@keyframes blink {
+  from { border-color: transparent }
+  to { border-color: black }
+}
+/* the css of portfolio  */
+.btn-hover{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 25px;
+    background:linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    padding-top: 70px;
+     cursor: pointer;
+    opacity: 0;
+    color: #fff;
+    border-radius: 5px;
+
+ }
+
+ .image-project:hover .btn-hover{
+   padding-bottom:70px;
+   transition: 1s;
+   opacity: 1;
+ 
+ }
+  /*////////////////////  */
+
+/* media query of navbar */
+@media(max-width:635px){
+    .menu-bar{
+        display: block;
+        z-index: 1;
+    }
+    nav h1{
+        font-size: 20px;
+    }
+    nav .hide{
+        display: none;
+    }
+    nav .active{
+        width: 100%;
+        position: absolute;
+        top:80px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding-top: 20px;
+        background-color:black;
+    }
+    /* home css */
+     .typing{
+        font-size: 25px;
+    }
+    /* profile css */
+     .image-project{
+     position: relative;
+     width: 330px;
+     height: 420px;
+     }
+ 
+    .image-project:hover .btn-hover{
+        padding-bottom:70px;
+        transition: 1s;
+        opacity: 1;
+ 
+        }
+}
+@media (min-width: 636px) and (max-width: 900px){
+     .menu-bar{
+        display: block;
+        z-index: 1;
+    }
+    nav h1{
+        font-size: 20px;
+    }
+    nav .active{
+        width: 100%;
+        position: absolute;
+        top:80px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding-top: 20px;
+        background-color:black;
+    }
+    nav  .hide{
+        display: none;
+    }
+   
+} 
+@media(min-width:900px) and (max-width:1290px)
+{
+    nav ul{
+        width: 450px;
+    }
+     .image-project{
+     position: relative;
+     width: 320px;
+     height: 420px;
+    }
+
+}
