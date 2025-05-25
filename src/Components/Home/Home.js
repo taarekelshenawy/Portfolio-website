@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
           <div className='home h-screen px-2  m-auto flex flex-col 
-            items-center  justify-center  mt-20 max-sm:justify-start max-sm:pt-5'
+            items-center  justify-center  mt-20 max-sm:justify-start max-sm:pt-8'
           >
 
               <div className='flex flex-col items-center gap-6  mx-auto w-[95%]'>
