@@ -36,7 +36,7 @@ export default function Navbar() {
 
       <button className="transition ease-in-out delay-100 
       rounded-full border-4 p-2 w-28 hover:bg-red-500 
-      font-bold text-[var(--text-color)] ">
+      font-bold text-[var(--text-color)] max-sm:hidden ">
        <Link to="contactme" smooth={true} duration={500} offset={-120}>lets talk</Link>
       </button>
       <img src={menubar} alt='menu-bar-icib' className='menu-bar ml-3' onClick={()=>setMenuicon(!menuicon)} ></img>
