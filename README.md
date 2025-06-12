@@ -1,3 +1,6 @@
+## ⚛️ This is a React-based Portfolio Website
+This project showcases my personal portfolio built using React and styled with Tailwind CSS.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
