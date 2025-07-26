@@ -1,10 +1,13 @@
 import React from 'react';
-import youtube from '../Images/youtubeclone.jpg';
+import youtube from '../Images/youtubeclone.avif';
 import wheater from "../Images/wheaterapp.png";
-import university from "../Images/univerity.png";
-import tictac from "../Images/tictactoe.png";
+import university from "../Images/university.png";
+import tictac from "../Images/tictactoe.webp";
 import facebookclone from '../Images/facebookimage.webp'
 import Title from '../Title/Title';
+import store from '../Images/store.webp';
+import dashboard from '../Images/dashboard.webp';
+import blban from '../Images/blban.jpg'
 
 export default function Portfolio() {
   let data =[
@@ -15,8 +18,26 @@ export default function Portfolio() {
     },
     {
       image:facebookclone,
-      href:"https://facebook-clone-rouge-five.vercel.app/",
+      href:"https://facebook-clone-using-react.vercel.app/",
       name:'Facebook clone'
+    },
+    {
+      image:store,
+      href:'https://steady-llama-a23988.netlify.app/',
+      name:'Store Ecommerce',
+
+    },
+    {
+      image:dashboard,
+      href:'https://admin-dashboard-xi-six-65.vercel.app/',
+      name:'Admin Dashboard'
+
+    },
+    {
+      image:blban,
+      href:'https://delightful-gaufre-719003.netlify.app/',
+      name:'Blban'
+
     },
     {
       image:wheater,
