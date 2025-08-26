@@ -32,17 +32,18 @@ width: 40px;
 }
 /* home css */
 .typing{
-   font-size: 32px;
+   font-size: 25px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
   animation: typing 5s steps(23) infinite, blink 0.7s step-end infinite alternate;
   border-right: 2px solid #000;
+
 }
 @keyframes typing {
   0% { width: 0 }
-  50% { width: 23ch }
+  50% { width: 40ch }
   100% { width: 0 }/* عدد الحروف تقريبا */
 }
 
@@ -50,29 +51,8 @@ width: 40px;
   from { border-color: transparent }
   to { border-color: black }
 }
-/* the css of portfolio  */
-.btn-hover{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 25px;
-    background:linear-gradient(rgba(0,0,0,0.6),#ff004f);
-    padding-top: 70px;
-     cursor: pointer;
-    opacity: 0;
-    color: #fff;
-    border-radius: 5px;
 
- }
 
- .image-project:hover .btn-hover{
-   padding-bottom:70px;
-   transition: 1s;
-   opacity: 1;
- 
- }
   /*////////////////////  */
 
 /* media query of navbar */
@@ -147,10 +127,6 @@ width: 40px;
     nav ul{
         width: 450px;
     }
-     .image-project{
-     position: relative;
-     width: 320px;
-     height: 420px;
-    }
+ 
 
 }

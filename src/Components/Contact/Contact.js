@@ -31,7 +31,7 @@ export default function Contact() {
   };
   return (
 
-        <div className=' contactme my-56 m-auto'>
+        <div className=' my-56 m-auto' id="contactme">
            <Title title="Contact me"/>
              <p className='text-center mb-8 font-bold text-2xl text-[var(--text-color)] max-sm:text-xl'>Please fill out the form below to discuss any work opportuintes</p>
              <div className='flex justify-center items-center '>

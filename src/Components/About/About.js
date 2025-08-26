@@ -2,7 +2,7 @@ import React from 'react';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 import { useEffect } from 'react';
-import Title from '../Title/Title';
+import { motion } from 'framer-motion';
 
 export default function About() {
 
@@ -13,52 +13,47 @@ export default function About() {
         });
       }, []);
   return (
+    <section className="py-16 px-6 bg-[#121212] text-center" id="about">
+      <motion.h2
+        className="text-4xl text-white font-bold mb-6 "
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        About Me
+      </motion.h2>
 
-      <div className='about my-56 mx-4 flex flex-col '>
+      <motion.p
+        className="text-2xl text-white max-w-2xl mx-auto leading-relaxed"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+      >
+        Hi, I’m <span className="font-semibold text-red-500">Tarek</span>, a
+        passionate <span className="font-semibold">Frontend Developer</span> with
+        a strong background in building modern, responsive, and interactive web
+        applications using <span className="font-semibold">React, Tailwind CSS, and JavaScript</span>.  
+        I love turning ideas into beautiful digital experiences and I’m always
+        learning new technologies to improve my skills.
+      </motion.p>
 
-            <Title title="About"/>
-            <div className='flex gap-16 text-xl
-             md:flex-col lg:flex-row sm:flex-col
-              max-sm:flex-col'
-              >
-                    <p data-aos="fade-up"
-                    data-aos-duration="1000" 
-                    data-aos-delay="200"     
-                    data-aos-easing="ease-in-out" 
-                    className='flex-1 p-3 rounded-lg text-[var(--text-color)]
-                      text-2xl bg-slate-500 '
-                    >
-                        I'm Tarek El Shenawy ,
-                        <span>Front-End Web Developer</span> I can create websites
-                          and applications using web languages such as
-                          HTML, CSS, and JavaScript that allow users to access
-                            and interact with the site or app. When you visit a website,
-                            the design elements you see were created by 
-                            a front-end developer.
-                    </p>
-                    <div  data-aos="fade-up"
-                                  data-aos-duration="1000" 
-                                  data-aos-delay="200"     
-                                  data-aos-easing="ease-in-out" 
-                                  className='flex-1 leading-10 
-                                    p-3 rounded-lg text-2xl bg-slate-500'
-                      >
-                                <p className='text-[var(--text-color)]'>
-                                  <span className='font-bold text-black'>Name : </span>
-                                  Tarek El Sayed El Shenawy.
-                                </p>
-                                <p className=' text-[var(--text-color)]'>
-                                  <span className='font-bold  text-black'>Email : </span>
-                                  <span className='max-sm:text-xl font-bold'>tarekelshenawy1997@gmail.com</span>
-                                </p>
-                                <p className='text-[var(--text-color)]'> 
-                                  <span className='font-bold text-2xl  text-black'> Place : </span>
-                                    Damietta
-                                </p>
-                    </div>
-
-            </div>
-      </div>  
+      <motion.div
+        className="flex justify-center gap-6 mt-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.8 }}
+      >
+        <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full">
+          React
+        </span>
+        <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full">
+          Tailwind
+        </span>
+        <span className="px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full">
+          JavaScript
+        </span>
+      </motion.div>
+    </section>
 
   )
 }
