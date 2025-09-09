@@ -77,7 +77,7 @@ width: 40px;
         justify-content: center;
         gap: 30px;
         padding-top: 20px;
-        background-color:black;
+        background-color:rgb(17, 24, 39);
     }
     /* home css */
      .typing{
@@ -115,7 +115,7 @@ width: 40px;
         justify-content: center;
         gap: 30px;
         padding-top: 20px;
-        background-color:black;
+        background-color:rgb(17, 24, 39)
     }
     nav  .hide{
         display: none;
