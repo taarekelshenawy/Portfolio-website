@@ -7,7 +7,7 @@ export default function Navbar() {
   const[menuicon,setMenuicon]=useState(false);
   return (
     <nav className="flex justify-between items-center px-12 pt-5 pb-3 fixed
-     top-0 left-0 right-0 bg-[var(--main-color)] z-20 h-20"
+     top-0 left-0 right-0  bg-gray-900 z-20 h-20"
      >
       <h1 className='font-bold hover:text-neutral-50 sm:text-xl  xl:text-3xl lg:text-3xl  hover:cursor-pointer text-red-500'>
         <Link to="home" smooth={true} duration={500} offset={-100} >

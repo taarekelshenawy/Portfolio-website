@@ -13,7 +13,7 @@ export default function About() {
         });
       }, []);
   return (
-    <section className="py-16 px-6 bg-[#121212] text-center" id="about">
+    <section className="py-16 px-6 bg-gray-900 text-center my-48" id="about">
       <motion.h2
         className="text-4xl text-white font-bold mb-6 "
         initial={{ opacity: 0, y: -30 }}
