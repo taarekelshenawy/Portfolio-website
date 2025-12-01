@@ -15,54 +15,60 @@ export default function Portfolio() {
       image:youtube,
       href:"https://youtube-clone-815w.vercel.app/",
       name:"Youtube clone",
-      desc:"A responsive YouTube clone built using React.js and YouTube Data API that replicates the core functionalities of the YouTube platform."
+      desc:"A responsive YouTube clone built using React.js and YouTube Data API that replicates the core functionalities of the YouTube platform.",
+      language:['React','CSS','API']
     },
     {
       image:facebookclone,
       href:"https://facebook-clone-using-react.vercel.app/",
       name:'Facebook clone',
-      desc:"Facebook Clone built with React JS and React-bootstrap, fully responsive with authentication using API, users can add and delete posts, fetch dynamic data from API, and manage content with a clean modern UI."
+      desc:"Facebook Clone built with React JS and React-bootstrap, fully responsive with authentication using API, users can add and delete posts, fetch dynamic data from API, and manage content with a clean modern UI.",
+      language:['React','bootstarp','API','Context']
     },
     {
       image:store,
       href:'https://steady-llama-a23988.netlify.app/',
       name:'Store Ecommerce',
-      desc:"E-commerce Store built with React JS and Tailwind CSS, fully responsive with API integration, features include product listing, product details, add to cart, wishlist, and checkout flow with modern UI/UX."
+      desc:"E-commerce Store built with React JS and Tailwind CSS, fully responsive with API integration, features include product listing, product details, add to cart, wishlist, and checkout flow with modern UI/UX.",
+      language:['React','tailwind','TypeScript','Redux','API']
 
     },
     {
       image:dashboard,
       href:'https://admin-dashboard-xi-six-65.vercel.app/',
       name:'Admin Dashboard',
-      desc:"Admin Dashboard built with React JS and Tailwind CSS, fully responsive with API integration, features include user management, product management (add, edit, delete), analytics dashboard with charts, and role-based authentication."
+      desc:"Admin Dashboard built with React JS and Tailwind CSS, fully responsive with API integration, features include user management, product management (add, edit, delete), analytics dashboard with charts, and role-based authentication.",
+        language:['React','tailwind','API']
 
     },
     {
       image:blban,
       href:'https://delightful-gaufre-719003.netlify.app/',
       name:'Blban',
-      desc:"Brand Website built with React JS and Tailwind CSS, fully responsive with API integration, includes brand catalog, product listing, filtering by categories, wishlist, and shopping cart functionality for a smooth e-commerce experience."
-
+      desc:"Brand Website built with React JS and Tailwind CSS, fully responsive with API integration, includes brand catalog, product listing, filtering by categories, wishlist, and shopping cart functionality for a smooth e-commerce experience.",
+      language:['React','tailwind','API']
     },
     {
       image:wheater,
       href:"https://taarekelshenawy.github.io/wheather-App/",
       name:"Wheater App",
-      desc:"Weather App built with React JS and Tailwind CSS, fully responsive with real-time API integration, allows users to search cities, view current weather conditions, temperature, humidity, and 5-day forecast with a clean modern UI."
+      desc:"Weather App built with React JS and Tailwind CSS, fully responsive with real-time API integration, allows users to search cities, view current weather conditions, temperature, humidity, and 5-day forecast with a clean modern UI.",
+      language:['React','Css']
     },
     {
        image:university,
       href:"https://taarekelshenawy.github.io/university-website/",
       name:"University website",
-      desc:"University Website built with React JS and Tailwind CSS, fully responsive with API integration, includes course listings, departments, faculty profiles, events calendar, and contact forms with a clean and modern UI/UX."
+      desc:"University Website built with React JS and Tailwind CSS, fully responsive with API integration, includes course listings, departments, faculty profiles, events calendar, and contact forms with a clean and modern UI/UX.",
+      language:['React','Css']
 
     },
     {
        image:tictac,
       href:"https://tic-tac-toe-sooty-one-95.vercel.app/",
       name:"Tic tac toe Game",
-      desc:"Tic Tac Toe Game built with React JS, fully responsive, allows two players to play on the same device with interactive UI, win detection, score tracking, and reset functionality."
-
+      desc:"Tic Tac Toe Game built with React JS, fully responsive, allows two players to play on the same device with interactive UI, win detection, score tracking, and reset functionality.",
+       language:['React','Css']
     }
 ]
   return (
@@ -96,6 +102,17 @@ export default function Portfolio() {
                                   rel="noopener noreferrer" className='text-red-500 text-lg font-bold' >Demo</a>
                             </div>
                             <p className=' text-md mt-2 text-gray-400'>{item.desc}</p>
+                            <div className='flex gap-2 mt-6 flex-wrap'>
+                             {item.language.map((el)=>{
+                              return(
+                                <p className='w-20  p-1 text-[14px] flex justify-center rounded-xl text-sm font-bold text-gray-700  bg-gray-100'>{el}</p>
+
+                              )
+                            })}
+
+                            </div>
+          
+                            
                       
                         </div>
 

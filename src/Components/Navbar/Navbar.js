@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import menubar from "../Images/menu.png";
 import { Link } from 'react-scroll';
+import github_icon from '../Images/github.png';
+import Linked_icon from '../Images/linkedin.png';
 
 
 export default function Navbar() {
@@ -34,11 +36,17 @@ export default function Navbar() {
           </li>
       </ul>
 
-      <button className="transition ease-in-out delay-100 
-      rounded-full border-4 p-2 w-28 hover:bg-red-500 
-      font-bold text-[var(--text-color)] max-sm:hidden ">
-       <Link to="contactme" smooth={true} duration={500} offset={-120}>lets talk</Link>
-      </button>
+      <div className="transition ease-in-out delay-100 p-2 w-28 
+      font-bold text-[var(--text-color)] max-sm:hidden flex gap-3 items-center">
+        <a href='https://github.com/taarekelshenawy' target='_blank'     rel="noopener noreferrer">
+         <img src={github_icon} alt='github-icon' className='bg-white w-11 rounded-full cursor-pointer border'></img>
+        </a>
+        <a href='https://www.linkedin.com/in/tarek-el-shenawy/' target='_blank'  rel="noopener noreferrer">
+         <img src={Linked_icon} alt='github-icon' className='bg-white w-11 rounded-full cursor-pointer border'></img>
+        </a>
+     
+      
+      </div>
       <img src={menubar} alt='menu-bar-icib' className='menu-bar ml-3' onClick={()=>setMenuicon(!menuicon)} ></img>
 
     </nav>
