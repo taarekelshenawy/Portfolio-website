@@ -79,9 +79,8 @@ export default function Portfolio() {
                 {
                   data.map((item,index)=>{
                     return(
-                      <>
+                      <div key={index}>
                          <motion.div
-                            key={index}
                             className="mx-auto border  rounded p-2 w-full max-w-[420px]" 
                             whileHover={{
                               scale: 1.05,          // يكبر شوية
@@ -92,7 +91,7 @@ export default function Portfolio() {
                             whileTap={{ scale: 0.95 }} // لما تضغط عليه يصغر بسيط
                             transition={{ type: "spring", stiffness: 300 }}
                           >
-                        <div key={index} className='mx-auto p-2'>
+                        <div className='mx-auto p-2'>
                           
                             <img src={item.image} alt='project-image'
                                   className='w-full h-64 object-cover rounded-md' ></img>
@@ -103,9 +102,9 @@ export default function Portfolio() {
                             </div>
                             <p className=' text-md mt-2 text-gray-400'>{item.desc}</p>
                             <div className='flex gap-2 mt-6 flex-wrap'>
-                             {item.language.map((el)=>{
+                             {item.language.map((el,index)=>{
                               return(
-                                <p className='w-20  p-1 text-[14px] flex justify-center rounded-xl text-sm font-bold text-gray-700  bg-gray-100'>{el}</p>
+                                <p key={index} className='w-20  p-1 text-[14px] flex justify-center rounded-xl text-sm font-bold text-gray-700  bg-gray-100'>{el}</p>
 
                               )
                             })}
@@ -117,7 +116,7 @@ export default function Portfolio() {
                         </div>
 
                       </motion.div>
-                      </>
+                      </div>
                
 
                   

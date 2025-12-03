@@ -38,7 +38,7 @@ export default function About() {
       </motion.p>
 
       <motion.div
-        className="flex justify-center gap-6 mt-8"
+        className="flex justify-center gap-6 mt-8 flex-wrap"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.8 }}
