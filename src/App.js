@@ -8,11 +8,13 @@ import Portfolio from './Components/Portfolio/Portfolio';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import Skills from './Components/Skills/Skills';
+import Drag from './Components/Drag/Drag';
 
 
 function App() {
   return (
     <div >
+      {/* <Drag/> */}
       <Navbar/>
       <Home/>
       <About/>

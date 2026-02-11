@@ -23,7 +23,7 @@ export default function Navbar() {
             <p></p>
           </li>
           <li  className=' hover:cursor-pointer text-[var(--text-color)]'>
-            <Link  to="services" smooth={true} duration={500} offset={-120}>Services</Link>
+            <Link  to="services" smooth={true} duration={500} offset={-50}>Services</Link>
             <p></p>
           </li>
           <li  className=' hover:cursor-pointer text-[var(--text-color)]'>
