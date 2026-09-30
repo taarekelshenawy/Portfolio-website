@@ -4,7 +4,6 @@ import Title from '../Title/Title';
 import { motion } from "framer-motion";
 import { client, urlFor } from '../../lib/sanity';
 import { useEffect, useState } from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; // لو مش مثبتاهم ممكن تستبدلهم بنص أو تبتكر
 
 export default function Portfolio() {
   const [projects, setProjects] = useState([]);
