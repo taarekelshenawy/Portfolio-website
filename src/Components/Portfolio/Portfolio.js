@@ -1,132 +1,120 @@
-import youtube from '../Images/youtubeclone.avif';
-import wheater from "../Images/wheaterapp.png";
-import university from "../Images/university.png";
-import tictac from "../Images/tictactoe.webp";
-import facebookclone from '../Images/facebookimage.webp'
+
+
 import Title from '../Title/Title';
-import store from '../Images/store.webp';
-import dashboard from '../Images/dashboard.webp';
-import blban from '../Images/blban.jpg';
 import { motion } from "framer-motion";
+import { client, urlFor } from '../../lib/sanity';
+import { useEffect, useState } from 'react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; // لو مش مثبتاهم ممكن تستبدلهم بنص أو تبتكر
 
 export default function Portfolio() {
-  let data =[
-    {
-      image:youtube,
-      href:"https://youtube-clone-815w.vercel.app/",
-      name:"Youtube clone",
-      desc:"A responsive YouTube clone built using React.js and YouTube Data API that replicates the core functionalities of the YouTube platform.",
-      language:['React','CSS','API']
-    },
-    {
-      image:facebookclone,
-      href:"https://facebook-clone-using-react.vercel.app/",
-      name:'Facebook clone',
-      desc:"Facebook Clone built with React JS and React-bootstrap, fully responsive with authentication using API, users can add and delete posts, fetch dynamic data from API, and manage content with a clean modern UI.",
-      language:['React','bootstarp','API','Context']
-    },
-    {
-      image:store,
-      href:'https://steady-llama-a23988.netlify.app/',
-      name:'Store Ecommerce',
-      desc:"E-commerce Store built with React JS and Tailwind CSS, fully responsive with API integration, features include product listing, product details, add to cart, wishlist, and checkout flow with modern UI/UX.",
-      language:['React','tailwind','TypeScript','Redux','API']
+  const [projects, setProjects] = useState([]);
 
-    },
-    {
-      image:dashboard,
-      href:'https://admin-dashboard-xi-six-65.vercel.app/',
-      name:'Admin Dashboard',
-      desc:"Admin Dashboard built with React JS and Tailwind CSS, fully responsive with API integration, features include user management, product management (add, edit, delete), analytics dashboard with charts, and role-based authentication.",
-        language:['React','tailwind','API']
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "project"]{
+          _id,
+          title,
+          description,
+          image,
+          techStack,
+          liveUrl,
+          githubUrl
+        }`
+      )
+      .then((data) => setProjects(data))
+      .catch(console.error);
+  }, []);
 
-    },
-    {
-      image:blban,
-      href:'https://delightful-gaufre-719003.netlify.app/',
-      name:'Blban',
-      desc:"Brand Website built with React JS and Tailwind CSS, fully responsive with API integration, includes brand catalog, product listing, filtering by categories, wishlist, and shopping cart functionality for a smooth e-commerce experience.",
-      language:['React','tailwind','API']
-    },
-    {
-      image:wheater,
-      href:"https://taarekelshenawy.github.io/wheather-App/",
-      name:"Wheater App",
-      desc:"Weather App built with React JS and Tailwind CSS, fully responsive with real-time API integration, allows users to search cities, view current weather conditions, temperature, humidity, and 5-day forecast with a clean modern UI.",
-      language:['React','Css']
-    },
-    {
-       image:university,
-      href:"https://taarekelshenawy.github.io/university-website/",
-      name:"University website",
-      desc:"University Website built with React JS and Tailwind CSS, fully responsive with API integration, includes course listings, departments, faculty profiles, events calendar, and contact forms with a clean and modern UI/UX.",
-      language:['React','Css']
 
-    },
-    {
-       image:tictac,
-      href:"https://tic-tac-toe-sooty-one-95.vercel.app/",
-      name:"Tic tac toe Game",
-      desc:"Tic Tac Toe Game built with React JS, fully responsive, allows two players to play on the same device with interactive UI, win detection, score tracking, and reset functionality.",
-       language:['React','Css']
-    }
-]
   return (
     <div className='my-56 mx-auto w-[90%]' id="portfolio">
-         <Title title="Profile"/>
-          <div className='grid  gap-5 xl:grid-cols-3
-              sm:grid-cols-2 max-sm:grid-cols-1'>
-                {
-                  data.map((item,index)=>{
-                    return(
-                      <div key={index}>
-                         <motion.div
-                            className="mx-auto border  rounded p-2 w-full max-w-[420px]" 
-                            whileHover={{
-                              scale: 1.05,          // يكبر شوية
-                              boxShadow: "0px 8px 20px rgba(0,0,0,0.2)",
-                              borderColor: "#ef4444",
-                              // ظل أقوى
-                            }}
-                            whileTap={{ scale: 0.95 }} // لما تضغط عليه يصغر بسيط
-                            transition={{ type: "spring", stiffness: 300 }}
-                          >
-                        <div className='mx-auto p-2'>
-                          
-                            <img src={item.image} alt='project-image'
-                                  className='w-full h-64 object-cover rounded-md' ></img>
-                            <div className='flex items-center justify-between mt-6'>
-                              <p className='font-bold text-2xl  text-[var(--text-color)]'>{item.name}</p>
-                              <a href={item.href}   target="_blank" 
-                                  rel="noopener noreferrer" className='text-red-500 text-lg font-bold' >Demo</a>
-                            </div>
-                            <p className=' text-md mt-2 text-gray-400'>{item.desc}</p>
-                            <div className='flex gap-2 mt-6 flex-wrap'>
-                             {item.language.map((el,index)=>{
-                              return(
-                                <p key={index} className='w-20  p-1 text-[14px] flex justify-center rounded-xl text-sm font-bold text-gray-700  bg-gray-100'>{el}</p>
+      <Title title="Profile" />
+      <div className='grid gap-8 xl:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1'>
+        {projects.map((item) => {
+          return (
+            <motion.div
+              key={item._id}
+              className="group bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between"
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0px 15px 30px rgba(239, 68, 68, 0.15)",
+                borderColor: "#ef4444",
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <div>
+                {/* صورة المشروع مع تأثير زووم عند الهوفر */}
+                <div className="relative overflow-hidden h-56">
+                  {item.image && (
+                    <img
+                      src={urlFor(item.image).url()}
+                      alt={item.title}
+                      className='w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500'
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
+                </div>
 
-                              )
-                            })}
-
-                            </div>
-          
-                            
-                      
-                        </div>
-
-                      </motion.div>
-                      </div>
-               
-
+                {/* محتوى الـ Card */}
+                <div className='p-6'>
+                  <h3 className='font-bold text-2xl text-white group-hover:text-red-500 transition-colors'>
+                    {item.title}
+                  </h3>
                   
+                  <p className='text-sm mt-3 text-slate-400 line-clamp-3 leading-relaxed'>
+                    {item.description}
+                  </p>
 
-                    )
-                  })
-                }
-              
-            
-          </div>
+                  {/* التقنيات المستدمة (Tech Stack) */}
+                  <div className='flex gap-2 mt-5 flex-wrap'>
+                    {item.techStack?.map((tech, index) => (
+                      <span
+                        key={index}
+                        className='px-3 py-1 text-xs font-semibold rounded-full text-red-400 bg-red-500/10 border border-red-500/20'
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* أزرار الروابط (Live Demo & GitHub) */}
+              <div className='px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/60 mt-4'>
+                {item.githubUrl && (
+                  <a
+                    href={item.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors'
+                  >
+                    <span className="underline underline-offset-4">GitHub</span>
+                  </a>
+                )}
+                
+                {item.liveUrl && (
+                  <a
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className='flex items-center gap-2 text-sm font-bold text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-xl transition-colors shadow-md shadow-red-600/20'
+                  >
+                    <span>Live Demo</span>
+                  </a>
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
-  )
+  );
 }
+
+
+
+
+
+
